@@ -22,6 +22,7 @@ export interface Props {
             };
         };
     };
+    id?: string;
     background?: ThemeColor;
     padding?: PaddingSize;
     paddingTop?: PaddingSize;
@@ -30,6 +31,7 @@ export interface Props {
 
 const {
     content,
+    id,
     background = 'base',
     padding,
     paddingTop,
@@ -50,7 +52,7 @@ const textColor = getTextColor(background);
 const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 ---
 
-<section class:list={["overflow-hidden", bgColor, paddingClass]}>
+<section id={id} class:list={["overflow-hidden", bgColor, paddingClass]}>
     <div class="site-container px-4">
         {variant === 'default' && (title || description) && (
             <div class="text-center mb-16">

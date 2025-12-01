@@ -61,16 +61,16 @@ const currentYear = new Date().getFullYear();
       <div class="col-span-1">
         <Logo variant="footer" />
         <p class="mt-4 text-white">
-          Empowering your digital journey with innovative solutions.
+          Intelligent methane detection in waste management through drone technology and AI.
         </p>
       </div>
       
-      <div class="col-span-1">
-        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+      <div class="col-span-1 md:col-span-2">
+        <h3 class="text-lg font-semibold mb-4">Project Partners</h3>
         <nav>
           <ul class="space-y-2">
             {footerMenu.map(item => (
-              <li><a href={item.link} class="text-body-dark hover:text-white transition-colors">{item.name}</a></li>
+              <li><a href={item.link} target="_blank" rel="noopener noreferrer" class="text-body-dark hover:text-white transition-colors">{item.name}</a></li>
             ))}
           </ul>
         </nav>

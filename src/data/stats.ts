@@ -24,21 +24,21 @@ export const statsLists: Record<string, StatsList> = {
         id: 'main',
         stats: [
             {
-                value: 10,
-                label: 'Theme Configurations',
+                value: 400,
+                label: 'kt CH₄ emitted annually (Germany)',
             },
             {
-                value: 11,
-                label: 'Pre-Built Components',
+                value: 288,
+                label: 'kt CH₄ escaping into atmosphere',
             },
             {
-                value: 48,
-                label: 'Team Members',
+                value: 200,
+                label: 'Underestimation by current methods',
+                suffix: '%'
             },
             {
-                value: 500000,
-                label: 'Lines of Code',
-                prefix: '+'
+                value: 5,
+                label: 'Project Partners',
             }
         ]
     },
@@ -46,23 +46,22 @@ export const statsLists: Record<string, StatsList> = {
         id: 'withContent',
         stats: [
             {
-                value: 10,
-                label: 'Color Schemes',
+                value: 400,
+                label: 'kt CH₄/year from landfills',
             },
             {
-                value: 14.53,
-                label: 'Core Bundle Size',
-                suffix: 'KB'
+                value: 30,
+                label: 'Currently captured',
+                suffix: '%'
             },
             {
-                value: 11,
-                label: 'Pre-Built Components',
+                value: 50,
+                label: 'Capture rate increase target',
+                suffix: '%'
             },
             {
-                value: 10,
-                label: 'Build Time',
-                prefix: '<100',
-                suffix: 's'
+                value: 2,
+                label: 'Year project duration',
             }
         ]
     }

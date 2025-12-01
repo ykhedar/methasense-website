@@ -17,6 +17,7 @@ export interface Props {
         };
         features: Feature[];
     };
+    id?: string;
     background?: ThemeColor;
     padding?: PaddingSize;
     paddingTop?: PaddingSize;
@@ -31,6 +32,7 @@ const {
         button,
         features
     },
+    id,
     background = 'base'
 } = Astro.props;
 
@@ -43,7 +45,7 @@ const paddingClass = getPaddingClass({
 });
 ---
 
-<section class:list={["relative", bgColor, paddingClass]}>
+<section id={id} class:list={["relative", bgColor, paddingClass]}>
     <div class="site-container px-4">
         {(title || description) && (
             <div class="text-center mb-16 max-w-3xl mx-auto">

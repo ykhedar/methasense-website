@@ -1,7 +1,7 @@
 import type { ImageMetadata } from 'astro';
 
 // Import your logo images
-// Replace these imports with your actual logo files
+// TODO: Replace these placeholder imports with actual partner logos
 import logo1 from '../assets/images/logos/logoipsum-333.svg';
 import logo2 from '../assets/images/logos/logoipsum-335.svg';
 import logo3 from '../assets/images/logos/logoipsum-344.svg';
@@ -10,7 +10,8 @@ import logo5 from '../assets/images/logos/logoipsum-352.svg';
 
 export interface Logo {
     src: ImageMetadata;
-    alt: string; // The partner company's name
+    alt: string; // The partner organization's name
+    url?: string; // Optional link to partner website
 }
 
 export interface LogoList {
@@ -18,30 +19,35 @@ export interface LogoList {
     logos: Logo[];
 }
 
-// Example logo lists with imported images
+// MethaSense project partners - replace placeholder logos with actual partner logos
 export const logoLists: Record<string, LogoList> = {
     main: {
         id: 'main',
         logos: [
             {
                 src: logo1,
-                alt: 'Partner 1',
+                alt: 'Gravionic GmbH',
+                url: 'https://www.gravionic.de'
             },
             {
                 src: logo2,
-                alt: 'Partner 2',
+                alt: 'Deposerv Ingenieursgesellschaft mbH',
+                url: 'https://www.deposerv.de'
             },
             {
                 src: logo3,
-                alt: 'Partner 3',
+                alt: 'Autrik UG',
+                url: 'https://www.autrik.com'
             },
             {
                 src: logo4,
-                alt: 'Partner 4',
+                alt: 'Öko-Institut e.V.',
+                url: 'https://www.oeko.de'
             },
             {
                 src: logo5,
-                alt: 'Partner 5',
+                alt: 'Chair of Measurement Technology, Saarland University',
+                url: 'https://www.lmt.uni-saarland.de/index.php/de/'
             },
         ],
     },

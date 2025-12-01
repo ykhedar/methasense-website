@@ -1,36 +1,56 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/sections/Hero.astro';
-import SplitPanel from '@components/sections/SplitPanel.astro';
 import Features from '@components/sections/Features.astro';
 import Stats from '@components/sections/Stats.astro';
 import { featureLists } from '@data/features';
 import { statsLists } from '@data/stats';
-import Logos from '@components/sections/Logos.astro';
-import { logoLists } from '@data/logos';
+import Eyebrow from '@components/ui/Eyebrow.astro';
 import CtaBanner from '@components/sections/CtaBanner.astro';
 import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
-import RecentPosts from '@components/sections/RecentPosts.astro';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
-import styleGuideImage from '../assets/images/home/developer.jpg';
+import { Mountain, Database, Zap } from 'lucide-astro';
 
-const seoTitle = "Modern, High-Performance Astro Theme";
-const seoDescription = "A modern, high-performance Astro theme for developer portfolios and documentation sites.";
+const challenges = [
+    {
+        icon: Mountain,
+        text: "Large, dynamic landfill bodies make measurements difficult."
+    },
+    {
+        icon: Database,
+        text: "Conventional methods capture only small amounts of data."
+    },
+    {
+        icon: Zap,
+        text: "Potential for emission reduction and energy recovery is insufficiently utilized."
+    }
+];
+
+const partners = [
+    { name: "Gravionic GmbH", url: "https://www.gravionic.de" },
+    { name: "Deposerv Ingenieursgesellschaft mbH", url: "https://www.deposerv.de" },
+    { name: "Autrik UG", url: "https://www.autrik.com" },
+    { name: "Öko-Institut e.V.", url: "https://www.oeko.de" },
+    { name: "Chair of Measurement Technology, Saarland University", url: "https://www.lmt.uni-saarland.de/index.php/de/" }
+];
+
+const seoTitle = "MethaSense - Intelligente Methandetektion im Abfallmanagement";
+const seoDescription = "MethaSense is developing an intelligent, drone-based solution for multi-sensory methane detection at landfills to continuously and precisely record emissions.";
 
 const heroContent = {
-    title: 'The Foundation for Beautiful Astro JS Websites',
-    description: 'Titan Core is a minimal, performance-focused Astro JS theme that serves as the perfect foundation for your next web project. Built with clean code and modern best practices, it\'s designed to be extended and customized to your specific needs.',
+    title: 'MethaSense',
+    description: 'MethaSense is developing an intelligent, drone-based solution for multi-sensory methane detection at landfills to continuously and precisely record emissions and thereby implement avoidance and recycling measures more effectively. The project combines state-of-the-art drone technology with innovative sensors and artificial intelligence (AI). The solution increases both the quantity and quality of emissions data, enables the analysis of anomalies in landfill environments, and, in the medium term, increases the methane capture rate by up to 50% compared to conventional systems. Furthermore, the sensor is multi-gas capable, allowing it to be used for the detection of hydrogen or ethane in the future. MethaSense thus contributes to optimizing environmental management, increasing resource efficiency, and leveraging the potential of digital technologies in waste management.',
     buttons: [
         {
-            text: 'Get Started',
-            link: '/contact',
+            text: 'Learn More',
+            link: '#solution',
             target: '_self'
         },
         {
-            text: 'View on GitHub',
-            link: 'https://github.com/rspisarski/titan-core',
-            target: '_blank'
+            text: 'Contact Us',
+            link: '/contact',
+            target: '_self'
         }
     ],
     backgroundImage: heroImage,
@@ -38,107 +58,114 @@ const heroContent = {
 }
 
 const featuresSection = {
-    eyebrow: "CORE FEATURES",
-    title: "Everything You Need, Nothing You Don't",
-    description: "Titan Core gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
+    eyebrow: "OUR SOLUTION APPROACH",
+    title: "Core of the Solution",
+    description: "MethaSense combines robotics, sensor technologies, and AI into an intelligent, multi-sensory measurement system that precisely and continuously records methane emissions. The goal is to increase the capture rate of landfill gas by up to 50% in the medium term compared to the reference system, thereby realizing ecological, economic, and social sustainability potential.",
     features: featureLists.main.features,
     button: {
-        text: "View Theme Info",
-        link: "/theme-info",
+        text: "Contact Us",
+        link: "/contact",
         variant: "primary" as const
     }
 }
 
 const FooterCta = {
-    eyebrow: "Join The Community",
-    title: ' Start Building With Titan Core Today',
-    description: 'Titan Core is open-source and constantly improving. Join our community of developers to contribute, get support, or showcase what you\'ve built.',
+    eyebrow: "Funding Notice",
+    title: 'Funding notice',
+    description: 'The MethaSense project is funded by the Federal Ministry for Research, Technology and Space. Funding code: 02WDG1764D. Running time: 01.11.2025 – 31.10.2027',
     hideCta: false,
     button: {
-        text: 'Download Titan Core',
-        link: 'https://github.com/rspisarski/titan-core',
-        target: '_blank'
+        text: 'Contact Us',
+        link: '/contact',
+        target: '_self'
     }
 }
 
-const styleGuideSection = {
-    eyebrow: "Design System",
-    headline: "Consistent & Beautiful Components",
-    description: "Titan Core comes with a complete style guide to ensure your projects maintain visual consistency. From typography to interactive elements, we've carefully crafted each component.",
-    image: {
-        src: styleGuideImage,
-        alt: "Featured image"
-    },
-    buttons: [
-        {
-            text: "Explore Style Guide",
-            link: "/style-guide",
-            variant: "primary" as const
-        }
-    ]
-}
-
 const sideBySideStats = {
-    eyebrow: "Stats",
-    title: "Built for Speed and Flexibility",
-    description: "Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
+    eyebrow: "The Initial Situation",
+    title: "Overview of the Need for Action",
+    description: "Measurements are currently based primarily on estimates, which often underestimate actual emissions by up to 200%. Inadequate methane monitoring hinders the implementation of effective avoidance and utilization measures. At the same time, the energy potential of landfill gas is only partially utilized. Methane also indirectly contributes to the formation of ground-level ozone, an air pollutant that promotes respiratory illnesses and asthma. Furthermore, the insufficient data leads to distorted economic assessments and makes a realistic estimation of climate change-related costs difficult.",
     variant: 'side-by-side' as const,
     stats: statsLists.withContent.stats,
     content: {
-        title: "Built for Speed and Flexibility",
-        description: "Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
+        title: "Key Challenges",
+        description: "Measurements are currently based primarily on estimates, which often underestimate actual emissions by up to 200%. Inadequate methane monitoring hinders the implementation of effective avoidance and utilization measures. At the same time, the energy potential of landfill gas is only partially utilized. Methane also indirectly contributes to the formation of ground-level ozone, an air pollutant that promotes respiratory illnesses and asthma. Furthermore, the insufficient data leads to distorted economic assessments and makes a realistic estimation of climate change-related costs difficult.",
         button: {
-            text: "Discover Titan Core",
-            link: "/theme-info",
+            text: "See Our Solution",
+            link: "#solution",
             variant: "primary" as const
         }
     }
 };
 
 const mainCta = {
-    eyebrow: "Build Blocks",
-    title: "Ready-to-Use Components",
-    description: "Save development time with our pre-built, accessible components. Each one is designed to integrate seamlessly with your projects while maintaining excellent performance.",
+    eyebrow: "Environmental Impact",
+    title: "Optimizing Waste Management",
+    description: "MethaSense contributes to optimizing environmental management, increasing resource efficiency, and leveraging the potential of digital technologies in waste management. At the same time, the energy potential of landfill gas is better utilized.",
     button: {
-        text: "View All Components",
-        link: "/components",
+        text: "Learn More",
+        link: "/contact",
         variant: "primary" as const,
         target: "_self" as const
     }
 };
 
 
-const logosSection = {
-    eyebrow: "Our Clients",
-    logos: logoLists.main.logos
-}
-
 const faqsSection = {
-    eyebrow: "FAQs",
-    title: 'Frequently Asked Questions',
-    description: 'Find answers to common questions about our platform and services.',
+    eyebrow: "Project Details",
+    title: 'Testing, Optimization and Evaluation',
+    description: 'The system undergoes extensive testing in laboratory and field trials, with various sensor combinations and data collection methods being tested and optimized. Results are incorporated into the continuous improvement of the measurement system and the scientific assessment of its sustainability potential. An accompanying environmental assessment according to ISO 14040/14044 ensures that MethaSense is both technologically and ecologically effective.',
     faqs: faqLists.main.faqs
-}
-
-const recentPostsSection = {
-    eyebrow: "LATEST INSIGHTS",
-    title: " Learn From Our Experience",
-    description: "Explore our latest articles on Astro JS development, theme customization tips, and web performance best practices.",
-    button: {
-            text: "View All Posts",
-            link: "/blog",
-        variant: "primary" as const
-    }
 }
 ---
 
 <Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
     <Hero content={heroContent} />
-    <Features content={featuresSection} padding="base" background="light" />
-    <RecentPosts content={recentPostsSection} background="base" padding="base" postsToShow={3} category="Theme Usage"/>
-    <SplitPanel content={styleGuideSection} imagePosition="right" background="light" padding="base" />
-    <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" />
-    <Logos content={logosSection} background="base" padding='small'/>
-    <Stats content={sideBySideStats} background='dark' padding="base"/>
+    <Stats id="problem" content={sideBySideStats} background='dark' padding="base"/>
+
+    <!-- Challenge Cards - attached to Initial Situation -->
+    <section class="bg-background-dark pb-16 -mt-8">
+        <div class="site-container px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {challenges.map((challenge, index) => (
+                    <div
+                        class="bg-background-base/10 border border-white/20 rounded-lg p-6 flex flex-col items-center text-center"
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100}
+                    >
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary mb-4">
+                            <challenge.icon size={24} class="text-white" />
+                        </div>
+                        <p class="text-white text-base">{challenge.text}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <Features id="solution" content={featuresSection} padding="base" background="light" />
+    <CtaBanner content={mainCta} variant="contained" background="base" paddingBottom="base" />
+
+    <!-- Partner Companies -->
+    <section id="partners" class="bg-background-light py-16">
+        <div class="site-container px-4 text-center">
+            <Eyebrow text="Project Partner" background="light" className="text-center" />
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 max-w-4xl mx-auto">
+                {partners.map((partner, index) => (
+                    <a
+                        href={partner.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-background border border-black/10 rounded-lg p-6 hover:border-primary hover:shadow-lg transition-all duration-300 flex items-center justify-center min-h-[100px]"
+                        data-aos="fade-up"
+                        data-aos-delay={index * 50}
+                    >
+                        <span class="text-foreground text-center font-medium">{partner.name}</span>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+
     <Faqs content={faqsSection} background="base" padding="base" />
 </Layout>

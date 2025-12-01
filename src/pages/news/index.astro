@@ -1,0 +1,85 @@
+---
+import Layout from '@layouts/Layout.astro';
+import InnerHero from '@components/sections/InnerHero.astro';
+import { Calendar, ArrowRight } from 'lucide-astro';
+
+const heroContent = {
+    title: "News",
+    description: "Latest updates and announcements from the MethaSense project"
+}
+
+const newsItems = [
+    {
+        date: "November 2025",
+        title: "MethaSense Project Officially Launched",
+        description: "The MethaSense project has officially started with funding from the Federal Ministry for Research, Technology and Space. The project brings together five partners to develop an intelligent, drone-based solution for methane detection at landfills.",
+        category: "Project Update"
+    },
+    {
+        date: "November 2025",
+        title: "Consortium Kickoff Meeting",
+        description: "All project partners met for the first consortium meeting to define work packages, milestones, and collaboration frameworks. The team established communication protocols and set the roadmap for the first project phase.",
+        category: "Event"
+    },
+    {
+        date: "October 2025",
+        title: "Funding Approval Received",
+        description: "The Federal Ministry for Research, Technology and Space has approved funding for the MethaSense project under funding code 02WDG1764D. The project will run from November 2025 to October 2027.",
+        category: "Announcement"
+    }
+];
+
+const FooterCta = {
+    eyebrow: "Stay Updated",
+    title: 'Get the Latest News',
+    description: 'Contact us to learn more about the MethaSense project and stay informed about our progress.',
+    hideCta: false,
+    button: {
+        text: 'Contact Us',
+        link: '/contact',
+        target: '_self'
+    }
+}
+---
+
+<Layout footerCta={FooterCta} title="News | MethaSense" description="Latest news and updates from the MethaSense intelligent methane detection project">
+    <InnerHero content={heroContent} />
+
+    <section class="bg-background-base py-16">
+        <div class="site-container px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    {newsItems.map((item, index) => (
+                        <article
+                            class="bg-background-light border border-black/10 rounded-lg p-6 md:p-8 hover:shadow-lg transition-shadow duration-300"
+                            data-aos="fade-up"
+                            data-aos-delay={index * 100}
+                        >
+                            <div class="flex flex-wrap items-center gap-4 mb-4">
+                                <span class="inline-flex items-center gap-2 text-sm text-foreground/70">
+                                    <Calendar size={16} />
+                                    {item.date}
+                                </span>
+                                <span class="inline-block px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+                                    {item.category}
+                                </span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-bold text-foreground mb-3">
+                                {item.title}
+                            </h2>
+                            <p class="text-foreground/80 leading-relaxed">
+                                {item.description}
+                            </p>
+                        </article>
+                    ))}
+                </div>
+
+                <div class="mt-12 text-center" data-aos="fade-up">
+                    <p class="text-foreground/70">
+                        More news and updates coming soon as the project progresses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

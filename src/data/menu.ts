@@ -1,23 +1,18 @@
 // src/data/menu.ts
 
 export const headerMenu = [
-    { name: 'Theme Info', link: '/theme-info' },
-    { name: 'Our Team', link: '/team' },
-    { name: 'Blog', link: '/blog' },
-    { name: 'Style-Guide', link: '/style-guide', showArrow: false,
-        children: [
-            { name: 'Typography', link: '/style-guide#typography' },
-            { name: 'Colors', link: '/style-guide#colors' },
-            { name: 'Links', link: '/style-guide#links' },
-            { name: 'Buttons', link: '/style-guide#buttons' },
-            { name: 'Forms', link: '/style-guide#forms' },
-            { name: 'Lists', link: '/style-guide#lists' },
-        ]
-    }
+    { name: 'Problem', link: '/#problem' },
+    { name: 'Solution', link: '/#solution' },
+    { name: 'Project Partner', link: '/#partners' },
+    { name: 'News', link: '/news' }
 ];
 
 export const footerMenu = [
-    { name: 'Style Guide', link: '/style-guide' },
+    { name: 'Gravionic GmbH', link: 'https://www.gravionic.de' },
+    { name: 'Deposerv Ingenieursgesellschaft mbH', link: 'https://www.deposerv.de' },
+    { name: 'Autrik UG', link: 'https://www.autrik.com' },
+    { name: 'Öko-Institut e.V.', link: 'https://www.oeko.de' },
+    { name: 'Saarland University (LMT)', link: 'https://www.lmt.uni-saarland.de/index.php/de/' },
 ];
 
 export const legalMenu = [
