@@ -26,7 +26,7 @@ export const faqLists: Record<string, FaqList> = {
             },
             {
                 question: "Who are the project partners?",
-                answer: "The project partners include: Gravionic GmbH (www.gravionic.de), Deposerv Ingenieursgesellschaft mbH (www.deposerv.de), Autrik UG (www.autrik.com), Öko-Institut e.V. (www.oeko.de), and the Chair of Measurement Technology at Saarland University."
+                answer: "The project partners include: Gravionic GmbH (www.gravionic.de), Deposerv Ingenieursgesellschaft mbH (www.deposerv.de), Autrik UG(haftungsbeschränkt) (www.autrik.com), Öko-Institut e.V. (www.oeko.de), and the Chair of Measurement Technology at Saarland University."
             },
             {
                 question: "How is the project funded and what is the timeline?",

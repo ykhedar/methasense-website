@@ -36,7 +36,7 @@ export const logoLists: Record<string, LogoList> = {
             },
             {
                 src: logo3,
-                alt: 'Autrik UG',
+                alt: 'Autrik UG(haftungsbeschränkt)',
                 url: 'https://www.autrik.com'
             },
             {

@@ -10,7 +10,7 @@ export const headerMenu = [
 export const footerMenu = [
     { name: 'Gravionic GmbH', link: 'https://www.gravionic.de' },
     { name: 'Deposerv Ingenieursgesellschaft mbH', link: 'https://www.deposerv.de' },
-    { name: 'Autrik UG', link: 'https://www.autrik.com' },
+    { name: 'Autrik UG(haftungsbeschränkt)', link: 'https://www.autrik.com' },
     { name: 'Öko-Institut e.V.', link: 'https://www.oeko.de' },
     { name: 'Saarland University (LMT)', link: 'https://www.lmt.uni-saarland.de/index.php/de/' },
 ];
