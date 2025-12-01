@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/astro.svg';
+
+const baseUrl = import.meta.env.BASE_URL;
+
 interface Props {
     variant?: 'header' | 'footer' | 'dark';
 }
@@ -22,7 +25,7 @@ const getLogoClass = () => {
 };
 ---
 
-<a href="/" class:list={['logo font-headline transition-colors duration-200 text-xl tracking-wide', getLogoClass()]}>
+<a href={baseUrl} class:list={['logo font-headline transition-colors duration-200 text-xl tracking-wide', getLogoClass()]}>
     {
         // If image is the only element in this link, its alt attribute should be a textual representation.
         // Please, use something like your company name or "Home", not "logo."

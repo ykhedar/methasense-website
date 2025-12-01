@@ -4,13 +4,32 @@ import Logo from '@components/Logo.astro';
 import { Menu, X, ChevronDown } from 'lucide-astro';
 import Button from '@components/ui/Button.astro';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const ctaButton = {
     name: 'Contact Us',
-    link: '/contact',
+    link: `${baseUrl}/contact`,
 };
 
 // Get the current path to determine active menu item
 const currentPath = Astro.url.pathname;
+
+// Function to prepend base URL to internal links
+const getLink = (link: string) => {
+    // External links - return as is
+    if (link.startsWith('http://') || link.startsWith('https://')) {
+        return link;
+    }
+    // Hash links on home page (e.g., /#problem)
+    if (link.startsWith('/#')) {
+        return `${baseUrl}/${link.slice(1)}`; // keeps the #
+    }
+    // Internal links starting with /
+    if (link.startsWith('/')) {
+        return `${baseUrl}${link}`; // keeps the leading /
+    }
+    return link;
+};
 
 // Function to check if a link is the current page or a parent of the current page
 const isCurrentPage = (link: string) => {
@@ -33,7 +52,7 @@ const isCurrentPage = (link: string) => {
                             <li class="relative group">
                                 <div class="flex items-center gap-1">
                                     <a
-                                        href={item.link}
+                                        href={getLink(item.link)}
                                         class:list={[
                                             'text-small font-medium rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-nav-text-active',
                                             isCurrentPage(item.link)
@@ -70,7 +89,7 @@ const isCurrentPage = (link: string) => {
                                         {item.children.map((child) => (
                                             <li>
                                                 <a
-                                                    href={child.link}
+                                                    href={getLink(child.link)}
                                                     class:list={[
                                                         'block px-4 text-small py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-nav-text-active',
                                                         isCurrentPage(child.link)
@@ -117,7 +136,7 @@ const isCurrentPage = (link: string) => {
                                     <div class="text-white">
                                         <div class="flex items-center justify-between">
                                             <a
-                                                href={item.link}
+                                                href={getLink(item.link)}
                                                 class:list={[
                                                     'py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-nav-mobile-text-active',
                                                     isCurrentPage(item.link)
@@ -151,7 +170,7 @@ const isCurrentPage = (link: string) => {
                                                 {item.children.map((child) => (
                                                     <li role="none">
                                                         <a
-                                                            href={child.link}
+                                                            href={getLink(child.link)}
                                                             class:list={[
                                                                 'block py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-nav-mobile-text-active',
                                                                 isCurrentPage(child.link)

@@ -12,6 +12,8 @@ import { faqLists } from '@data/faqs';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
 import { Mountain, Database, Zap } from 'lucide-astro';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const challenges = [
     {
         icon: Mountain,
@@ -44,12 +46,12 @@ const heroContent = {
     buttons: [
         {
             text: 'Learn More',
-            link: '#solution',
+            link: `${baseUrl}/#solution`,
             target: '_self'
         },
         {
             text: 'Contact Us',
-            link: '/contact',
+            link: `${baseUrl}/contact`,
             target: '_self'
         }
     ],
@@ -64,7 +66,7 @@ const featuresSection = {
     features: featureLists.main.features,
     button: {
         text: "Contact Us",
-        link: "/contact",
+        link: `${baseUrl}/contact`,
         variant: "primary" as const
     }
 }
@@ -76,7 +78,7 @@ const FooterCta = {
     hideCta: false,
     button: {
         text: 'Contact Us',
-        link: '/contact',
+        link: `${baseUrl}/contact`,
         target: '_self'
     }
 }
@@ -92,7 +94,7 @@ const sideBySideStats = {
         description: "Measurements are currently based primarily on estimates, which often underestimate actual emissions by up to 200%. Inadequate methane monitoring hinders the implementation of effective avoidance and utilization measures. At the same time, the energy potential of landfill gas is only partially utilized. Methane also indirectly contributes to the formation of ground-level ozone, an air pollutant that promotes respiratory illnesses and asthma. Furthermore, the insufficient data leads to distorted economic assessments and makes a realistic estimation of climate change-related costs difficult.",
         button: {
             text: "See Our Solution",
-            link: "#solution",
+            link: `${baseUrl}/#solution`,
             variant: "primary" as const
         }
     }
@@ -104,7 +106,7 @@ const mainCta = {
     description: "MethaSense contributes to optimizing environmental management, increasing resource efficiency, and leveraging the potential of digital technologies in waste management. At the same time, the energy potential of landfill gas is better utilized.",
     button: {
         text: "Learn More",
-        link: "/contact",
+        link: `${baseUrl}/contact`,
         variant: "primary" as const,
         target: "_self" as const
     }

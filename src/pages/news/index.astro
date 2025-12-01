@@ -3,6 +3,8 @@ import Layout from '@layouts/Layout.astro';
 import InnerHero from '@components/sections/InnerHero.astro';
 import { Calendar, ArrowRight } from 'lucide-astro';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const heroContent = {
     title: "News",
     description: "Latest updates and announcements from the MethaSense project"
@@ -36,7 +38,7 @@ const FooterCta = {
     hideCta: false,
     button: {
         text: 'Contact Us',
-        link: '/contact',
+        link: `${baseUrl}/contact`,
         target: '_self'
     }
 }
