@@ -3,11 +3,14 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 
-// Get the site URL from environment variable or use a default for local development
-const site = process.env.PUBLIC_SITE_URL || 'http://localhost:4321';
+// GitHub Pages configuration
+// Replace 'methasense-website' with your actual repository name
+const base = '/methasense-website';
+const site = 'https://ykhedar.github.io';
 
 export default defineConfig({
-  site,
+  site: site,
+  base: base,
   vite: {
     plugins: [tailwindcss()],
     css: {
