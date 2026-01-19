@@ -7,6 +7,7 @@ import logo2 from '../assets/images/logos/logoipsum-335.svg';
 import logo3 from '../assets/images/logos/logoipsum-344.svg';
 import logo4 from '../assets/images/logos/logoipsum-347.svg';
 import logo5 from '../assets/images/logos/logoipsum-352.svg';
+import logo6 from '../assets/images/logos/logoipsum-356.svg';
 
 export interface Logo {
     src: ImageMetadata;
@@ -48,6 +49,11 @@ export const logoLists: Record<string, LogoList> = {
                 src: logo5,
                 alt: 'Chair of Measurement Technology, Saarland University',
                 url: 'https://www.lmt.uni-saarland.de/index.php/de/'
+            },
+            {
+                src: logo6,
+                alt: 'August-Wilhelm Scheer Institut',
+                url: 'https://aws-institut.de/'
             },
         ],
     },

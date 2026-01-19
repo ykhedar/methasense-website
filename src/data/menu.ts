@@ -13,6 +13,7 @@ export const footerMenu = [
     { name: 'Autrik UG(haftungsbeschränkt)', link: 'https://www.autrik.com' },
     { name: 'Öko-Institut e.V.', link: 'https://www.oeko.de' },
     { name: 'Saarland University (LMT)', link: 'https://www.lmt.uni-saarland.de/index.php/de/' },
+    { name: 'August-Wilhelm Scheer Institut', link: 'https://aws-institut.de/' },
 ];
 
 export const legalMenu = [
