@@ -3,6 +3,9 @@ import { footerMenu, legalMenu } from '@data/menu';
 import Logo from '@components/Logo.astro';
 import Button from '@components/ui/Button.astro';
 import { siteConfig } from '@data/config';
+import { Image } from 'astro:assets';
+import foerderlogoBmftr from '../assets/images/foerderlogo-bmftr.svg';
+import logoDgtr from '../assets/images/logo-dgtr.svg';
 
 interface ButtonProps {
   text: string;
@@ -44,8 +47,8 @@ const currentYear = new Date().getFullYear();
         <p class="text-white mb-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
           {cta.description}
         </p>
-        <Button 
-          href={cta.button.link} 
+        <Button
+          href={cta.button.link}
           variant="ghostLight"
           size="lg"
           data-aos="fade-up"
@@ -54,6 +57,10 @@ const currentYear = new Date().getFullYear();
         >
           {cta.button.text}
         </Button>
+        <div class="flex flex-wrap justify-center items-center gap-6 mt-8" data-aos="fade-up" data-aos-delay="300">
+          <img src={foerderlogoBmftr.src} alt="Bundesministerium für Forschung, Technologie und Raumfahrt" class="bg-white rounded-lg p-3" style="height: 160px; width: 280px; object-fit: contain;" />
+          <img src={logoDgtr.src} alt="DGTR" class="bg-white rounded-lg p-3" style="height: 160px; width: 280px; object-fit: contain;" />
+        </div>
       </div>
     )}
 
