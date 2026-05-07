@@ -17,7 +17,8 @@ export const footerMenu = [
 ];
 
 export const legalMenu = [
-    { name: 'Privacy Policy', link: '/legal/privacy-policy' },
-    { name: 'Terms of Service', link: '/legal/terms-of-service' }
+    { name: 'Impressum', link: 'https://autrik.com/legal/impressum/' },
+    { name: 'Privacy Policy', link: 'https://autrik.com/legal/privacy/' },
+    { name: 'Terms of Service', link: 'https://autrik.com/legal/terms/' }
 ];
 

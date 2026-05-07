@@ -93,8 +93,10 @@ const currentYear = new Date().getFullYear();
         <ul class="flex flex-wrap gap-6">
           {legalMenu.map(item => (
             <li>
-              <a 
-                href={item.link} 
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="text-sm text-body-dark hover:text-white transition-colors"
               >
                 {item.name}

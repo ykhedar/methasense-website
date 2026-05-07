@@ -25,10 +25,6 @@ export const faqLists: Record<string, FaqList> = {
                 answer: "The solution increases both the quantity and quality of emissions data, enables the analysis of anomalies in landfill environments, and, in the medium term, increases the methane capture rate by up to 50% compared to conventional systems. The sensor is also multi-gas capable for future detection of hydrogen or ethane."
             },
             {
-                question: "Who are the project partners?",
-                answer: "The project partners include: Gravionic GmbH (www.gravionic.de), Deposerv Ingenieursgesellschaft mbH (www.deposerv.de), Autrik UG(haftungsbeschränkt) (www.autrik.com), Öko-Institut e.V. (www.oeko.de), and the Chair of Measurement Technology at Saarland University."
-            },
-            {
                 question: "How is the project funded and what is the timeline?",
                 answer: "The MethaSense project is funded by the Federal Ministry for Research, Technology and Space. Funding code: 02WDG1764D. The project runs from 01.11.2025 to 31.10.2027."
             }
