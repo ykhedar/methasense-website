@@ -9,10 +9,10 @@ import Eyebrow from '@components/ui/Eyebrow.astro';
 import CtaBanner from '@components/sections/CtaBanner.astro';
 import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
-import heroImage from '../assets/images/home/default-hero-2.jpg';
+import heroImage from '../assets/images/home/MethaSense_Teaserbild.png';
 import { Mountain, Database, Zap } from 'lucide-astro';
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const challenges = [
     {

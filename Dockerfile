@@ -8,11 +8,7 @@ RUN npm ci
 
 COPY . .
 
-# Override GitHub Pages config for production deployment
-ENV ASTRO_SITE=https://methasense.de
-RUN sed -i "s|const base = '/methasense-website';|const base = '';|" astro.config.mjs && \
-    sed -i "s|const site = 'https://ykhedar.github.io';|const site = 'https://methasense.de';|" astro.config.mjs && \
-    npm run build
+RUN npm run build
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
