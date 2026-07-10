@@ -5,6 +5,7 @@ import Button from '@components/ui/Button.astro';
 import { siteConfig } from '@data/config';
 import { Image } from 'astro:assets';
 import foerderlogoBmftr from '../assets/images/foerderlogo-bmftr.svg';
+import logoBmftrFona from '../assets/images/bmftr-fona.svg';
 import logoDgtr from '../assets/images/logo-dgtr.svg';
 
 interface ButtonProps {
@@ -59,6 +60,7 @@ const currentYear = new Date().getFullYear();
         </Button>
         <div class="flex flex-wrap justify-center items-center gap-6 mt-8" data-aos="fade-up" data-aos-delay="300">
           <img src={foerderlogoBmftr.src} alt="Bundesministerium für Forschung, Technologie und Raumfahrt" class="bg-white rounded-lg p-3" style="height: 160px; width: 280px; object-fit: contain;" />
+          <img src={logoBmftrFona.src} alt="FONA – Forschung für Nachhaltigkeit (BMFTR)" class="bg-white rounded-lg p-3" style="height: 160px; width: 280px; object-fit: contain;" />
           <img src={logoDgtr.src} alt="DGTR" class="bg-white rounded-lg p-3" style="height: 160px; width: 280px; object-fit: contain;" />
         </div>
       </div>
